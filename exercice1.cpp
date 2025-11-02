@@ -1,29 +1,31 @@
+// OUSSAMA EL BOUALITI
+
 #include <iostream>
 using namespace std;
 
 class Pile {
 private:
-    int elements[100]; // tableau de 100 éléments max
-    int taille;        // nombre d’éléments dans la pile
+    int elements[100]; // tableau de 100 Ã©lÃ©ments max
+    int taille;        // nombre dâ€™Ã©lÃ©ments dans la pile
 
 public:
     // --- Constructeur ---
     Pile() {
         taille = 0;
-        cout << "Pile créée avec succès !" << endl;
+        cout << "Pile crÃ©Ã©e avec succÃ¨s !" << endl;
     }
 
-    // --- Vérifie si la pile est vide ---
+    // --- VÃ©rifie si la pile est vide ---
     bool pileVide() {
         return taille == 0;
     }
 
-    // --- Vérifie si la pile est pleine ---
+    // --- VÃ©rifie si la pile est pleine ---
     bool pilePleine() {
         return taille >= 100;
     }
 
-    // --- Empiler un élément ---
+    // --- Empiler un Ã©lÃ©ment ---
     void empiler(int x) {
         if (pilePleine()) {
             cout << "Erreur : la pile est pleine !" << endl;
@@ -31,17 +33,17 @@ public:
         }
         elements[taille] = x;
         taille++;
-        cout << "Élément " << x << " empilé. Taille actuelle : " << taille << endl;
+        cout << "Ã‰lÃ©ment " << x << " empilÃ©. Taille actuelle : " << taille << endl;
     }
 
-    // --- Dépiler un élément ---
+    // --- DÃ©piler un Ã©lÃ©ment ---
     int depiler() {
         if (pileVide()) {
             cout << "Erreur : la pile est vide !" << endl;
             return -1;
         }
         taille--;
-        cout << "Élément " << elements[taille] << " dépilé. Taille actuelle : " << taille << endl;
+        cout << "Ã‰lÃ©ment " << elements[taille] << " dÃ©pilÃ©. Taille actuelle : " << taille << endl;
         return elements[taille];
     }
 
@@ -55,7 +57,7 @@ public:
 
     // --- Destructeur ---
     ~Pile() {
-        cout << "Pile détruite." << endl;
+        cout << "Pile dÃ©truite." << endl;
     }
 };
 
@@ -63,7 +65,7 @@ public:
 // Programme principal
 // =======================
 int main() {
-    Pile p; // création automatique (appelle le constructeur)
+    Pile p; // crÃ©ation automatique (appelle le constructeur)
 
     p.empiler(5);
     p.empiler(10);
@@ -73,6 +75,7 @@ int main() {
     p.depiler();
     p.afficher();
 
-    return 0; // destructeur appelé automatiquement ici
+    return 0; // destructeur appelÃ© automatiquement ici
 }
+
 
